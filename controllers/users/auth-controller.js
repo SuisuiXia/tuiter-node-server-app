@@ -4,14 +4,17 @@ var currentUserVar;
 const AuthController = (app) => {
  const register = (req, res) => {
    const username = req.body.username;
+   console.log(username)
    const user = usersDao.findUserByUsername(username);
    if (user) {
      res.sendStatus(409);
      return;
    }
-   const newUser = usersDao.createUser(req.body);
-   currentUserVar = newUser
+  const newUser = {  _id: new Date().getTime() + "", firstName:req.body.firstName, lastName:req.body.lastName, username:req.body.username, password:req.body.password  }
    //req.session["currentUser"] = newUser;
+  usersDao.createUser(newUser)
+  currentUserVar = newUser
+  console.log(newUser)
    res.json(newUser);
  };
 
