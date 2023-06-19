@@ -21,7 +21,7 @@ app.use(
 );
 app.use(cors({
    credentials: true,
-   origin: ["http://localhost:3000", "https://a5--adorable-fairy-cc497a.netlify.app"]
+   origin: ["http://localhost:3000", "https://a6--adorable-fairy-cc497a.netlify.app"]
  })
 )
 app.use(express.json());
