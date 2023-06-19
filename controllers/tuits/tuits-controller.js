@@ -30,7 +30,7 @@ const updateTuit = async(req, res) => {
   // const tuitIndex = tuits.findIndex((t) => t._id === tuitdId)
   // tuits[tuitIndex] = {...tuits[tuitIndex], ...updates};
   const status = await tuitsDao.updateTuit(tuitdId, updates);
-  res.sendStatus(status);
+  res.json(status);
 }
 
 const deleteTuit = async (req, res) => {
